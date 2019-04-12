@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Upload image</h1>
+    <form name="form" (ngSubmit)="onUpload()" #f="ngForm" enctype="multipart/form-data" novalidate>
+        <input type="file" (change)="selectFile($event)"/><br/><br/>
+        <div class="form-group" style = "width:400px">
+            <label for="caption">Image Caption</label>
+            <textarea class="form-control" rows="5" id="caption" name = "caption" [(ngModel)]="form.caption" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-round btn-info" data-toggle="morphing" data-rotation-color="azure">Upload</button>
+    </form>
+    <div *ngIf="message">
+        {{ message }}
+    </div>
+</div>
